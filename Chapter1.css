@@ -1,0 +1,388 @@
+/* ---------------- GOOGLE STYLE RESET ---------------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* ---------------- BODY ---------------- */
+
+body{
+
+    background-image:url("assets/paper.jpg.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-attachment: fixed;
+
+    font-family:'Inter',sans-serif;
+
+    color:#5a4332;
+
+    min-height:100vh;
+
+    padding:80px 25px;
+
+    overflow-x:hidden;
+
+}
+
+/* ---------------- PAPER ---------------- */
+
+.paper{
+
+    width:100%;
+
+    max-width:850px;
+
+    margin:auto;
+
+}
+
+/* ---------------- CHAPTER ---------------- */
+
+.chapter{
+
+    text-align:center;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:26px;
+
+    font-weight:700;
+
+    color:#7b5b43;
+
+    letter-spacing:2px;
+
+    opacity:0;
+
+    transition: opacity 1.5s;
+
+}
+
+/* ---------------- TITLE ---------------- */
+
+h1{
+
+    text-align:center;
+
+    margin-top:15px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:70px;
+
+    color:#5b3f2e;
+
+    font-weight:400;
+
+    opacity:0;
+
+    transition: opacity 1.5s;
+
+}
+
+/* ---------------- DIVIDER ---------------- */
+
+.divider{
+
+    width:140px;
+
+    height:2px;
+
+    background:#9b7b5b;
+
+    margin:30px auto 60px;
+
+    opacity:.6;
+
+}
+
+/* ---------------- STORY ---------------- */
+
+.story{
+
+    width:100%;
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+/* ---------------- PARAGRAPHS ---------------- */
+
+.line{
+
+    font-size:22px;
+
+    line-height:1.3;
+
+    margin-bottom:18px;
+
+    color:#4b382a;
+
+}
+
+/* Hidden before JS reveals them */
+
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s ease;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ---------------- PHOTO ---------------- */
+
+.photo{
+
+    position:relative;
+
+    width:320px;
+
+    margin:60px auto;
+
+    background:white;
+
+    padding:12px 12px 35px;
+
+    border-radius:4px;
+
+    box-shadow:0 12px 28px rgba(0,0,0,.18);
+
+    transform:rotate(-4deg);
+
+    transition:all 1.2s ease;
+
+}
+
+.photo::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-22px;
+
+    left:50%;
+
+    transform:translateX(-50%) rotate(-3deg);
+
+    width:110px;
+
+    height:42px;
+
+    background:url("assets/tape.png.jpg");
+
+    background-size:contain;
+
+    background-repeat:no-repeat;
+
+    opacity:.95;
+
+}
+
+.photo img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+.caption{
+
+    text-align:center;
+
+    margin-top:18px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:22px;
+
+    font-style:italic;
+
+    color:#6d4e37;
+
+}
+
+/* ---------------- BUTTON ---------------- */
+
+button{
+
+    display:block;
+
+    margin:90px auto 40px;
+
+    padding:15px 40px;
+
+    background:#6f4e37;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    font-family:'Inter',sans-serif;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+
+}
+
+button:hover{
+
+    transform:translateY(-4px);
+
+    background:#5c3d2a;
+
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width:768px){
+
+body{
+
+padding:60px 20px;
+
+}
+
+h1{
+
+font-size:52px;
+
+}
+
+.line{
+
+font-size:19px;
+
+line-height:1.8;
+
+}
+
+.photo{
+
+width:90%;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+}
+
+/* ---------- COFFEE STAIN ---------- */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:40px;
+
+right:60px;
+
+width:220px;
+
+height:220px;
+
+background:url("assets/coffee.png.jpg");
+
+background-size:contain;
+
+background-repeat:no-repeat;
+
+opacity:.18;
+
+pointer-events:none;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    top:120px;
+
+    right:120px;
+
+    width:95px;
+
+    height:95px;
+
+    border:4px solid rgba(111,78,55,.06);
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+}
+
+/* ---------- TORN PAPER ---------- */
+
+.paper{
+
+    position:relative;
+
+    padding-bottom:140px;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 40px;
+
+}
+
+.paper::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:100%;
+
+    height:45px;
+
+    background:
+    radial-gradient(circle at 12px 0,#F4E8D4 14px,transparent 15px) repeat-x;
+
+    background-size:26px 40px;
+
+}
+

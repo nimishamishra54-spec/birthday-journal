@@ -1,0 +1,986 @@
+/* =======================================================
+                        RESET
+======================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* =======================================================
+                        BODY
+======================================================= */
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    color:#4b382a;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+    position:relative;
+
+    background:#efe5d2;
+
+}
+
+/* ---------- Vintage Map ---------- */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:url("assets/vintage.jpg.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    z-index:-2;
+
+}
+
+/* ---------- Cream Overlay ---------- */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(247,240,227,.62);
+
+    z-index:-1;
+
+}
+
+/* =======================================================
+                    LOCK SCREEN
+======================================================= */
+
+#lockScreen{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+
+}
+
+/* =======================================================
+                    LOCK CARD
+======================================================= */
+
+.lock-card{
+
+    width:100%;
+
+    max-width:720px;
+
+    background:rgba(255,250,242,.72);
+
+    backdrop-filter:blur(5px);
+
+    padding:60px 50px;
+
+    border-radius:14px;
+
+    box-shadow:0 18px 45px rgba(0,0,0,.18);
+
+    border:1px solid rgba(120,90,65,.15);
+
+    text-align:center;
+
+}
+
+/* =======================================================
+                    CHAPTER
+======================================================= */
+
+.chapter{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:28px;
+
+    letter-spacing:3px;
+
+    color:#7b5b43;
+
+    margin-bottom:10px;
+
+}
+
+/* =======================================================
+                        TITLE
+======================================================= */
+
+h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:68px;
+
+    color:#5b3f2e;
+
+    font-weight:400;
+
+    margin-bottom:20px;
+
+}
+
+/* =======================================================
+                        DIVIDER
+======================================================= */
+
+.divider{
+
+    width:140px;
+
+    height:2px;
+
+    background:#987457;
+
+    margin:25px auto 40px;
+
+    opacity:.6;
+
+}
+
+/* =======================================================
+                        QUOTE
+======================================================= */
+
+.quote{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:24px;
+
+    line-height:1.7;
+
+    font-style:italic;
+
+    color:#644c38;
+
+    margin-bottom:40px;
+
+}
+
+/* =======================================================
+                        LOCK
+======================================================= */
+
+#lockIcon{
+
+    width:130px;
+
+    height:130px;
+
+    margin:0 auto 35px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    animation:floatLock 3s ease-in-out infinite;
+
+    transition:opacity .8s ease
+
+}
+
+/* =======================================================
+                        HINT
+======================================================= */
+
+.hint{
+
+    font-size:18px;
+
+    color:#6f4e37;
+
+    margin-bottom:18px;
+
+}
+
+/* =======================================================
+                    PASSWORD BOX
+======================================================= */
+
+#password{
+
+    width:100%;
+
+    max-width:420px;
+
+    padding:15px 22px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:40px;
+
+    font-size:17px;
+
+    background:#fffdf8;
+
+    color:#5b4332;
+
+    box-shadow:0 6px 15px rgba(0,0,0,.12);
+
+    margin-bottom:25px;
+
+    transition:.35s;
+
+}
+
+#password:focus{
+
+    transform:scale(1.02);
+
+    box-shadow:0 8px 20px rgba(111,78,55,.25);
+
+}
+
+/* =======================================================
+                        BUTTON
+======================================================= */
+
+#unlockBtn{
+
+    padding:14px 40px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:#6f4e37;
+
+    color:white;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+
+}
+
+#unlockBtn:hover{
+
+    transform:translateY(-4px);
+
+    background:#5b3f2e;
+
+}
+
+/* =======================================================
+                    MESSAGE
+======================================================= */
+
+#message{
+
+    margin-top:25px;
+
+    min-height:25px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:22px;
+
+    color:#6b4d39;
+
+}
+
+/* =======================================================
+                JOURNEY (Hidden Initially)
+======================================================= */
+
+#journey{
+
+    display:none;
+
+    opacity:0;
+
+    transition:opacity 1.2s ease;
+
+}
+
+/* =======================================================
+                    LOCK ANIMATION
+======================================================= */
+
+@keyframes floatLock{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/* =======================================================
+                    JOURNAL PAPER
+======================================================= */
+
+.paper{
+
+    width:100%;
+
+    max-width:1100px;
+
+    margin:80px auto;
+
+    padding:60px 50px 120px;
+
+    position:relative;
+
+}
+
+/* =======================================================
+                    INTRO
+======================================================= */
+
+.intro{
+
+    max-width:650px;
+
+    margin:60px auto 120px;
+
+    text-align:center;
+
+}
+
+.intro p{
+
+    font-size:22px;
+
+    line-height:1.8;
+
+    color:#5d4533;
+
+    margin-bottom:10px;
+
+}
+
+/* =======================================================
+                    MEMORIES
+======================================================= */
+
+.memories{
+
+    width:100%;
+
+    position:relative;
+
+}
+
+/* =======================================================
+                    MEMORY CARD
+======================================================= */
+
+.memory{
+
+    width:100%;
+
+    display:flex;
+
+    margin:120px 0;
+
+    position:relative;
+
+}
+
+.memory.left{
+
+    justify-content:flex-start;
+
+}
+
+.memory.right{
+
+    justify-content:flex-end;
+
+}
+
+/* =======================================================
+                    STOP TITLE
+======================================================= */
+
+.stop{
+
+    position:absolute;
+
+    top:-40px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:24px;
+
+    color:#7a5a43;
+
+}
+
+.memory.left .stop{
+
+    left:40px;
+
+}
+
+.memory.right .stop{
+
+    right:40px;
+
+}
+
+/* =======================================================
+                    POLAROID
+======================================================= */
+
+.polaroid{
+
+    width:330px;
+
+    background:white;
+
+    padding:14px 14px 45px;
+
+    border-radius:4px;
+
+    box-shadow:0 14px 30px rgba(0,0,0,.18);
+
+    transition:.45s;
+
+    position:relative;
+
+}
+
+/* =======================================================
+                POLAROID ROTATION
+======================================================= */
+
+.memory.left .polaroid{
+
+    transform:rotate(-5deg);
+
+}
+
+.memory.right .polaroid{
+
+    transform:rotate(5deg);
+
+}
+
+/* =======================================================
+                    PHOTO
+======================================================= */
+
+.polaroid img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:2px;
+
+}
+
+/* =======================================================
+                    CAPTION
+======================================================= */
+
+.caption{
+
+    text-align:center;
+
+    margin-top:20px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:22px;
+
+    color:#6c4d39;
+
+    font-style:italic;
+
+}
+
+/* =======================================================
+                POLAROID HOVER
+======================================================= */
+
+.polaroid:hover{
+
+    transform:rotate(0deg) scale(1.05);
+
+    box-shadow:0 22px 45px rgba(0,0,0,.28);
+
+}
+
+/* =======================================================
+                    ENDING
+======================================================= */
+
+.ending{
+
+    text-align:center;
+
+    margin:180px auto 80px;
+
+    max-width:650px;
+
+}
+
+.end-line{
+
+    font-size:24px;
+
+    margin-bottom:18px;
+
+    color:#5b4332;
+
+}
+
+.signature{
+
+    margin-top:50px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:48px;
+
+    color:#6d4b36;
+
+}
+
+/* =======================================================
+                NEXT BUTTON
+======================================================= */
+
+.nextBtn{
+
+    display:block;
+
+    margin:auto;
+
+    padding:16px 42px;
+
+    background:#6f4e37;
+
+    color:white;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:0 10px 22px rgba(0,0,0,.18);
+
+}
+
+.nextBtn:hover{
+
+    background:#5b3f2e;
+
+    transform:translateY(-5px);
+
+}
+
+/* =======================================================
+                FADE ANIMATION
+======================================================= */
+
+.fade{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+
+        opacity 1.4s ease,
+
+        transform 1.4s ease;
+
+}
+
+.fade.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* =======================================================
+                        ROAD
+======================================================= */
+
+
+
+
+
+/* =======================================================
+                    MEMORY LAYER
+======================================================= */
+
+.memory{
+
+    z-index:2;
+
+}
+
+.polaroid{
+
+    z-index:3;
+
+}
+
+/* =======================================================
+                    DECORATIONS
+======================================================= */
+
+.airplane,
+.compass,
+.flower,
+.paperclip,
+.film-strip{
+
+    position:absolute;
+
+    pointer-events:none;
+
+    opacity:.65;
+
+}
+
+/* =======================================================
+                    AIRPLANE
+======================================================= */
+
+.airplane{
+
+    position:fixed;
+
+    top:55px;
+
+    right:45px;
+
+    width:95px;
+
+    opacity:.75;
+
+    pointer-events:none;
+
+    animation:fly 20s ease-in-out infinite;
+
+}
+
+/* =======================================================
+                    COMPASS
+======================================================= */
+
+.compass{
+
+    position:absolute;
+
+    top:900px;
+
+    left:40px;
+
+    opacity:.28;
+
+    transform:rotate(-18deg);
+
+}
+
+/* =======================================================
+                    FLOWER
+======================================================= */
+
+.flower{
+
+    position:absolute;
+
+    right:70px;
+
+    top:1700px;
+
+    opacity:.35;
+
+}
+
+/* =======================================================
+                    PAPER CLIP
+======================================================= */
+
+.paperclip{
+
+    position:absolute;
+
+    left:120px;
+
+    top:2350px;
+
+    opacity:.4;
+
+}
+
+/* =======================================================
+                    FILM STRIP
+======================================================= */
+
+.film-strip{
+
+    position:absolute;
+
+    right:80px;
+
+    top:2850px;
+
+    opacity:.28;
+
+    transform:rotate(8deg);
+
+}
+
+/* =======================================================
+                    AIRPLANE ANIMATION
+======================================================= */
+
+@keyframes fly{
+
+    0%{
+
+        transform:
+        translateX(0)
+        translateY(0)
+        rotate(0deg);
+
+    }
+
+    25%{
+
+        transform:
+        translateX(-40px)
+        translateY(18px)
+        rotate(-6deg);
+
+    }
+
+    50%{
+
+        transform:
+        translateX(-80px)
+        translateY(-12px)
+        rotate(5deg);
+
+    }
+
+    75%{
+
+        transform:
+        translateX(-40px)
+        translateY(10px)
+        rotate(-4deg);
+
+    }
+
+    100%{
+
+        transform:
+        translateX(0)
+        translateY(0)
+        rotate(0deg);
+
+    }
+
+}
+
+/* =======================================================
+                    MOBILE
+======================================================= */
+
+@media(max-width:900px){
+
+.paper{
+
+    padding:40px 25px 80px;
+
+}
+
+.memory{
+
+    justify-content:center !important;
+
+}
+
+.stop{
+
+    left:50% !important;
+
+    right:auto !important;
+
+    transform:translateX(-50%);
+
+}
+
+.polaroid{
+
+    width:90%;
+
+    transform:rotate(0deg) !important;
+
+}
+
+h1{
+
+    font-size:52px;
+
+}
+
+.quote{
+
+    font-size:20px;
+
+}
+
+.intro p{
+
+    font-size:19px;
+
+}
+
+.end-line{
+
+    font-size:21px;
+
+}
+
+.signature{
+
+    font-size:38px;
+
+}
+
+.road{
+
+    display:none;
+
+}
+
+.airplane,
+.compass,
+.flower,
+.paperclip,
+.film-strip{
+
+    display:none;
+
+}
+
+}
+
+.chapter-end{
+
+    text-align:center;
+
+    margin:120px auto 80px;
+
+}
+
+.end-text{
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-size:28px;
+
+    color:#6f4e37;
+
+    margin-bottom:15px;
+
+}
+
+.end-text.small{
+
+    font-size:22px;
+
+    font-style:italic;
+
+    opacity:.8;
+
+    margin-bottom:40px;
+
+}
+
+.turn-page{
+
+    display:inline-block;
+
+    padding:15px 40px;
+
+    background:#6f4e37;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:40px;
+
+    font-size:20px;
+
+    transition:.35s;
+
+}
+
+.turn-page:hover{
+
+    background:#563b28;
+
+    transform:translateY(-3px);
+
+}
